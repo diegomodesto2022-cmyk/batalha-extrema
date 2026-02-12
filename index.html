@@ -1,1 +1,38 @@
-https://diegomodesto2022-cmyk.github.io/batalha-extrema/%0A
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Batalha Extrema</title>
+</head>
+<body style="text-align:center; background:black; color:white;">
+
+    <h1>🔥 Batalha Extrema 🔥</h1>
+    <p>Clique no botão para atacar!</p>
+
+    <button onclick="atacar()" style="padding:10px 20px; font-size:20px;">
+        ATACAR ⚔️
+    </button>
+
+    <p id="vidaInimigo">Vida do inimigo: 100</p>
+
+    <script>
+        let vida = 100;
+
+        function atacar() {
+            let dano = Math.floor(Math.random() * 20) + 5;
+            vida -= dano;
+
+            if (vida < 0) {
+                vida = 0;
+            }
+
+            document.getElementById("vidaInimigo").innerHTML =
+                "Vida do inimigo: " + vida;
+
+            if (vida === 0) {
+                alert("Você venceu a batalha! 🔥");
+            }
+        }
+    </script>
+
+</body>
+</html>
